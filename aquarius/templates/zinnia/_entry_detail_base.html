@@ -1,0 +1,43 @@
+{% load comments i18n %}
+{% load url from future %}
+<div class="smalest-container">
+    <div class="news">
+        <div class="row-fluid">
+            <div class="span8 left-text-news">
+                <div class="mainTitle">
+                    {% if continue_reading %}
+                        <a href="{{ object.get_absolute_url }}"
+                           title="{{ object.title }}" rel="bookmark">
+                            {{ object.title }}
+                        </a>
+                    {% else %}
+                        {{ object.title }}
+                    {% endif %}
+                </div>
+                <div class="content-text-news">
+                    {{ object_content }}
+                </div>
+
+
+                {% if continue_reading %}
+                    <a href="{{ object.get_absolute_url }}">
+                        <div class="more">
+                            {% trans "Więcej" %}
+                        </div>
+                    </a>
+                {% endif %}
+            </div>
+            <div class="span4 picture">
+                {% if continue_reading %}
+                    <a href="{{ object.get_absolute_url }}"
+                       title="{{ object.title }}" rel="bookmark">
+                {% endif %}
+                <img src="{{ object.image.url }}"
+                     alt="{{ object.title }}" class="left"/>
+                {% if continue_reading %}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

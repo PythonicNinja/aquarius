@@ -1,0 +1,29 @@
+@import "variables.less";
+@import "mixins.less";
+
+.main-content {
+  background: url('../img/bgPlain.jpg') center;
+  background-position: top;
+  background-repeat: repeat-y;
+  max-width: 1600px;
+  min-height: 530px !important;
+  margin: 0 auto;
+  padding-top: 20px;
+  margin-bottom: 30px !important;
+  .box-shadow-color(inset 0px, -10px, 10px, -10px, @rezerwacjaBoxShadowColor);
+  .thanks {
+    h2 {
+      text-align: center;
+      font-style: normal;
+      font-family: novecento_wide_bookbold;
+      font-size: 24px;
+      color: @apartamentTitleColor;
+      border-bottom: 1px solid @BannerBorderBottom;
+    }
+    background: white;
+    padding: 20px;
+    margin-top: 20px !important;
+    .box-shadow( 2px 1px 20px 0px @rezerwacjaBoxShadowColor);
+  }
+}
+

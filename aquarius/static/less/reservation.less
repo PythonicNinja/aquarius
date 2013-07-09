@@ -1,0 +1,49 @@
+@import "variables.less";
+@import "mixins.less";
+
+.main-content {
+  background: url('../img/bgPlain.jpg') center;
+  background-position: top;
+  background-repeat: repeat-y;
+  min-height: 1336px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 20px;
+  margin-bottom: 30px !important;
+  .box-shadow-color(inset 0px, -10px, 10px, -10px, @rezerwacjaBoxShadowColor);
+  .reserv {
+    .box-shadow( 2px 1px 20px 0px @rezerwacjaBoxShadowColor);
+  }
+  .title {
+    font-family: novecento_wide_bookbold;
+    font-size: 24px;
+    color: @BannerMainTitleColor;
+    border-bottom: 1px solid @BannerBorderBottom;
+    background: white;
+    padding: 10px;
+  }
+  .form {
+    background: white;
+    padding: 20px;
+    #id_personal_data {
+      margin-top: -50px;
+    }
+    label[for=id_personal_data] {
+      margin-left: 20px;
+    }
+    .buttonHolder {
+      input {
+        cursor: pointer;
+        padding-right: 62px !important;
+        border: none;
+        display: block;
+        padding: 7px 7px 7px 7px;
+        background: url(../img/more.png) no-repeat;
+        font-family: novecento_wide_bookbold;
+        font-size: 13px;
+        color: @BannerMainTitleColor;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,129 @@
+@import "variables.less";
+@import "mixins.less";
+
+body {
+  font-family: "Trebuchet MS";
+  .container {
+    width: 100%;
+    max-width: 1600px;
+  }
+  .big-container{
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .small-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .smalest-container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .ui-widget-header {
+    border: none !important;
+    .buttonBackground(@btnStartColor,@btnEndColor,@btnTextColor);
+  }
+  .plugin_googlemap{
+    img{
+      max-width: none;
+    }
+  }
+  a{
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: none;
+  }
+}
+
+header {
+  margin-top: 2%;
+  margin-bottom: 0px;
+  max-width: 1600px;
+  .box-shadow-color(0, 11px, 10px, -10px, @rezerwacjaBoxShadowColor);
+  position: relative;
+  z-index: @zheader;
+  .container-header {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .languages {
+    margin-right: 0px;
+    display: inline-block;
+  }
+  .language {
+    display: inline-block;
+  }
+
+  img {
+    margin: -20px auto;
+  }
+
+  .tw {
+    margin-top: 35px;
+    margin-bottom: 0%;
+    text-align: right;
+  }
+
+  .menu {
+    margin-top: 2%;
+    margin-bottom: 0% !important;
+    margin-left: 30px;
+    li {
+      display: inline-block;
+      margin-right: 1%;
+      margin-top: 10px;
+      text-transform: uppercase;
+      font-family: novecento_wide_bookbold;
+      font-size: 14px;
+      line-height: 40px;
+    }
+
+    li a {
+      text-decoration: none;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      .border-radius(10px);
+      .buttonBackground(@btnStartColor,@btnEndColor, @btnTextColor);
+    }
+    li a:hover {
+      .buttonBackground(@btnStartHoverColor,@btnEndHoverColor, @btnTextColor);
+    }
+  }
+}
+
+footer {
+  min-height: 231px;
+  margin-top: 15px;
+  .menu {
+    margin: 0 auto;
+    li {
+      display: inline-block;
+      margin-right: 1%;
+      text-transform: uppercase;
+      font-family: novecento_wide_bookbold;
+      font-size: 14px;
+      line-height: 40px;
+    }
+
+    li a {
+      text-decoration: none;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      .border-radius(10px);
+      .buttonBackground(@btnStartColor,@btnEndColor, @btnTextColor);
+    }
+    li a:hover {
+      .buttonBackground(@btnStartHoverColor,@btnEndHoverColor, @btnTextColor);
+    }
+  }
+
+  .logo {
+    margin-top: -100px;
+  }
+}

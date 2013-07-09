@@ -1,0 +1,47 @@
+{% load sekizai_tags %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}slideshow_parallax/css/parallax-slider.css"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}slideshow_parallax/js/jquery.cslider.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('#da-slider').cslider({
+        current     : 0,    
+        autoplay    : true,
+        interval    : 4000,
+        bgincrement : 0  
+       });
+    });
+</script>
+{% endaddtoblock %}
+  
+<div id="da-slider" class="da-slider">
+  {% for slide in slides %}
+    {% if slide.published %}
+    <div class="da-slide">
+      {% if slide.img %}
+      <div class="da-img">
+        <img src="{{ slide.img.url }}" alt="{{ slide.title }}">
+      </div>
+      {% endif %}
+      <h3>{{ slide.title|safe }}</h3>
+      {% if slide.description %}
+      <p>{{ slide.description|safe }}</p>
+      {% endif %}
+      {% if slide.btn_text %}
+      <div class="da-button">
+        <a href="http://{{ slide.url }}" class="btn btn-custom">{{ slide.btn_text }}</a>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+  {% endfor %}
+  
+  {% if slides|length > 1 %}
+  <nav class="da-arrows">
+    <span class="da-arrows-prev"><i class="icon-chevron-left"></i></span>
+    <span class="da-arrows-next"><i class="icon-chevron-right"></i></span>
+  </nav>
+  {% endif %}
+</div>
+
+

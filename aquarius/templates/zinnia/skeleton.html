@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load compress cms_tags menu_tags sekizai_tags %}
+
+{% block less %}
+    <link href='http://fonts.googleapis.com/css?family=Playball&subset=latin-ext,latin'
+          rel='stylesheet' type='text/css'>
+    {% if debug %}
+        <link rel="stylesheet/less" type="text/css" media="all"
+              href="{{ STATIC_URL }}less/main.less">
+        <link rel="stylesheet/less" type="text/css" media="all"
+              href="{{ STATIC_URL }}less/main_responsive.less">
+    {% else %}
+        {% compress css %}
+            <link rel="stylesheet/less" type="text/css" media="all"
+                  href="{{ STATIC_URL }}less/main.less">
+            <link rel="stylesheet/less" type="text/css" media="all"
+                  href="{{ STATIC_URL }}less/main_responsive.less">
+        {% endcompress %}
+    {% endif %}
+{% endblock %}
+
+{% block contact_section %}
+    <div class="border-bottom-100">
+        <section class="contact-section small-container">
+            <div class="row-fluid">
+                <div class="span3 cena paddings">
+                    {% placeholder cena %}
+                </div>
+                <div class="span2 telefon paddings">
+                    <img src="{{ STATIC_URL }}img/mobile.jpg">
+                    {% placeholder telefon %}
+                </div>
+                <div class="span4 mail paddings">
+                    <img src="{{ STATIC_URL }}img/mail.jpg">
+                    {% placeholder mail %}
+                </div>
+                <div class="span3 adres paddings">
+                    <img src="{{ STATIC_URL }}img/place.jpg">
+                    {% placeholder adres %}
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block base_content %}
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+        <div class="partnerzy">
+            <div class="text">
+                PARTNERZY
+            </div>
+            <div class="images">
+                <img src="{{ STATIC_URL }}img/referencje1.jpg" alt=""/>
+                <img src="{{ STATIC_URL }}img/referencje2.jpg" alt=""/>
+            </div>
+        </div>
+    </div>
+{% endblock %}

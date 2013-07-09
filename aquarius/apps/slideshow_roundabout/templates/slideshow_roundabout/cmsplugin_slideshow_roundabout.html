@@ -1,0 +1,102 @@
+{% load sekizai_tags %}
+{% load thumbnail %}
+{% addtoblock "js" %}
+    <script src="{{ STATIC_URL }}slideshow_roundabout/jquery.flexslider-min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+{% endaddtoblock %}
+{% addtoblock "css" %}
+    <link rel="stylesheet"
+          href="{{ STATIC_URL }}slideshow_roundabout/flexslider.css">
+    <link rel="stylesheet"
+          href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+{% endaddtoblock %}
+
+{% addtoblock "js" %}
+    <script>
+        $(document).ready(function () {
+            // The slider being synced must be initialized first
+            $('.flexslider').flexslider({
+                animation: "slide",
+                after: function (slider) {
+                    var flex = 'flex-active-slide';
+                    $('.flex-active-slide').next().addClass(flex).end().removeClass(flex);
+                },
+                start: function (slider) {
+                    var flex = 'flex-active-slide';
+                    $('.flex-active-slide').next().addClass(flex).end().removeClass(flex);
+                }
+            });
+        });
+    </script>
+{% endaddtoblock %}
+<div class="overflow text-center">
+    <div id="carousel" class="flexslider">
+        <ul class="slides">
+            {% for slide in slides %}
+                <li>
+                    <img src="{% thumbnail slide.img 1200x518 crop %}"
+                         alt="{{ slide.title }}">
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="rezerwacja visible-desktop">
+            <img src="{{ STATIC_URL }}img/rezerwacja.png">
+
+            <div class="rezerw_content">
+                <form action="/apartaments/search" method="GET">
+                    <p>Data przyjazdu</p>
+                    <input type="text" name="arrival" id="arival"/>
+
+                    <p>Data wyjazdu</p>
+                    <input type="text" name="comingback" id="comingback"/>
+
+                    <p>Ilość osób</p>
+                    <select id="id_persons" name="persons">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" selected>4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+
+                    <div class="arrow"></div>
+
+                    <button type="submit">
+                        sprawdź dostępność
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="best visible-desktop">
+            <img src="{{ STATIC_URL }}img/best.png" alt="">
+
+            <div class="vote">zagłosuj na nasz hotel</div>
+        </div>
+    </div>
+</div>
+
+{% addtoblock "js" %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#arival").datepicker({
+                dateFormat: "yy-mm-dd",
+                showOn: "button",
+                buttonImage: "{{ STATIC_URL }}img/kalendarz.png",
+                buttonImageOnly: true,
+                showAnim: "slideDown"
+            });
+
+            $("#comingback").datepicker({
+                dateFormat: "yy-mm-dd",
+                showOn: "button",
+                buttonImage: "{{ STATIC_URL }}img/kalendarz.png",
+                buttonImageOnly: true,
+                showAnim: "slideDown"
+            });
+        });
+    </script>
+{% endaddtoblock %}
+

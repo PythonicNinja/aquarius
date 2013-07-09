@@ -1,0 +1,401 @@
+@import "variables.less";
+@import "mixins.less";
+
+.main-content {
+  background: url('../img/bgPlain.jpg') center;
+  background-position: top;
+  background-repeat: repeat-y;
+  min-height: 1336px;
+  max-width: 1600px;
+  margin: 0 auto;
+  margin-bottom: 30px !important;
+  .box-shadow-color(inset 0px, -10px, 10px, -10px, @rezerwacjaBoxShadowColor);
+
+  .rezerwacja {
+    margin: 20px auto;
+    text-align: center;
+    z-index: 999;
+    background: none;
+
+    img {
+      opacity: 1;
+    }
+    .rezerw_content {
+      padding: 10px;
+      font-family: NOVECENTO_WIDENORMAL;
+      font-size: 12px;
+      text-align: left;
+      height: 260px;
+      width: 236px;
+      margin: 0 auto;
+      background-color: @rezerwacjaApartamentColor;
+      margin-top: -2px;
+      .box-shadow-color(inset 1px,0px,0px,0px, @BannerBorderBottom);
+      .box-shadow-color(2px, 2px, 19px, 0px,@rezerwacjaBoxShadowColor);
+
+      input {
+        width: 170px;
+        border: 3px solid @rezerwacjaInputColor;
+        .border-radius();
+      }
+      .ui-datepicker-trigger {
+        cursor: pointer;
+        margin-top: -10px;
+        margin-left: 10px;
+        display: inline-block;
+      }
+      select {
+        width: 185px;
+        border: 3px solid @rezerwacjaInputColor;
+        .border-radius();
+      }
+      .arrow {
+        pointer-events: none;
+        margin-left: -30px;
+        display: inline-block;
+        background: url(../img/showMore.jpg) right no-repeat;
+        content: url(../img/showMore.jpg);
+      }
+      button {
+        cursor: pointer;
+        margin: 6px auto;
+        padding-right: 62px !important;
+        border: none;
+        display: block;
+        padding: 7px 7px 7px 7px;
+        background: url(../img/send.png) no-repeat;
+        font-family: novecento_wide_bookbold;
+        font-size: 13px;
+        color: @BannerMainTitleColor;
+      }
+
+    }
+  }
+
+  .baners {
+    margin: 10px auto;
+    .topTitle {
+      font-family: novecento_widenormal;
+      font-size: 12px;
+      margin-top: 2%;
+    }
+
+    .mainTitle {
+      margin-top: 2%;
+      margin-bottom: 2%;
+      padding-bottom: 2%;
+      font-family: novecento_wide_bookbold;
+      font-size: 24px;
+      color: @BannerMainTitleColor;
+      border-bottom: 1px solid @BannerBorderBottom;
+    }
+
+    .content {
+      margin-top: 2%;
+      margin-bottom: 2%;
+      font-size: 12px;
+    }
+
+    .baner {
+      margin-top: 20px;
+      margin-right: 0.7%;
+      display: inline-block;
+      width: 311px;
+      min-height: 204px;
+      background-color: #fff;
+    }
+  }
+
+  .cena {
+    text-align: center;
+    font-family: 'Playball', cursive;
+    font-size: 28px;
+    color: @rezerwacjaApartamentColor;
+  }
+
+  .apartamenty {
+    color: @BannerMainTitleColor;
+    margin: 10px auto;
+    width: 767px;
+    .description_apartment {
+      padding: 20px;
+      background-color: #fff !important;
+    }
+
+    /***** calendar *****/
+    #calendar_month {
+      display: block;
+      background: white;
+      table {
+        padding: 5px;
+        border: 0;
+        margin: 0 auto;
+        border-collapse: separate;
+        .month-header {
+          background: #6C4F2D;
+          padding: 10px 10px 5px 10px;
+        }
+
+        tr.week-row {
+          color: #6C4F2D;
+        }
+        td {
+          padding: 5px 5px;
+        }
+
+        td.past {
+          opacity: 0.5;
+        }
+        th {
+          font-size: 16px;
+          text-transform: capitalize;
+          height: 32px;
+        }
+      }
+      .month-name {
+        font-size: 18px;
+        color: #FAEDB8;
+      }
+
+      .switch-left {
+        text-align: left;
+      }
+
+      .switch-right {
+        text-align: right;
+      }
+
+      a {
+        color: #FAEDB8;
+      }
+
+      .day-container {
+        width: 82px;
+        height: 50px;
+        border: 1px solid #4C3D42;
+        background: #FAEDB8;
+      }
+
+      .header {
+        color: #fefefe;
+        background: #6C4F2D;
+        padding: 2px 5px 2px 5px;
+      }
+
+      .day {
+        float: left;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .price {
+        float: right;
+        font-size: 11px;
+        font-weight: bold;
+      }
+
+      .state {
+        height: 18px;
+        text-align: center;
+        padding: 5px;
+      }
+
+      .state-1 {
+        border-color: #4DB232;
+        .header {
+          background: #4DB232;
+        }
+
+        .state {
+          color: #4DB232;
+        }
+      }
+
+      .state-2 {
+        border-color: #B02D2D;
+
+        .header {
+          background: #B02D2D;
+        }
+
+        .state {
+          color: #B02D2D;
+        }
+      }
+
+      .state-3 {
+        border-color: #4C3D42;
+        .header {
+          background: #4C3D42;
+        }
+        .state {
+          color: #4C3D42;
+        }
+      }
+    }
+
+    .photos {
+      padding: 10px;
+      background-color: #fff !important;
+    }
+    #location {
+
+      background: #fff !important;
+      margin-top: -10px;
+      h2{
+        padding-left: 20px;
+      }
+    }
+
+    .apartamentyTitle {
+      font-family: novecento_wide_bookbold;
+      margin-top: 20px;
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+    .apartament {
+      margin-top: 20px;
+
+      background: white;
+
+      .leftDetails {
+        padding: 20px;
+        .title {
+          font-family: novecento_wide_bookbold;
+          font-size: 24px;
+          color: @apartamentTitleColor;
+          padding: 10px;
+          border-bottom: 1px solid @BannerBorderBottom;
+        }
+        .subtitle {
+          margin-top: 5px;
+          margin-bottom: 5px;
+          font-style: italic;
+          font-size: 12px;
+          color: @apartamentSubTitleColor;
+          border-bottom: 1px solid @BannerBorderBottom;
+        }
+        .aboutText {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          padding-bottom: 10px;
+          color: @apartamentSubTitleColor;
+          font-size: 14px;
+          border-bottom: 1px solid @BannerBorderBottom;
+        }
+        .details {
+          border-bottom: 1px solid @BannerBorderBottom;
+          padding-bottom: 10px;
+          .liczbapokoi {
+            display: block;
+            margin-top: 1px;
+          }
+          .ceny {
+            padding: 10px;
+            background: @apartamentSezonyBackground;
+            .cenyTitle {
+              font-family: novecento_widenormal;
+              font-size: 22px;
+              color: @apartamentCenaTitle;
+            }
+            .sezonWysokiTitle, .sezonNiskiTitle {
+              color: @apartamentCenaSubtitle;
+              font-size: 12px;
+            }
+            .price {
+              font-family: novecento_wide_bookbold;
+              font-size: 22px;
+              color: @apartamentPrice;
+            }
+          }
+        }
+        .bottomInfo {
+          margin-top: 10px;
+          .fromMonte {
+            font-family: "Trebuchet MS";
+            font-size: 14px;
+            color: @apartamentSubTitleColor;
+            .fromMonteTitle {
+              display: inline-block;
+            }
+            .fromMonteValue {
+              display: inline-block;
+            }
+          }
+          .fromBeach {
+            font-family: "Trebuchet MS";
+            font-size: 14px;
+            color: @apartamentSubTitleColor;
+            .fromBeachTitle {
+              display: inline-block;
+            }
+            .fromBeachValue {
+              display: inline-block;
+            }
+          }
+          .lookup {
+            font-family: novecento_wide_bookbold;
+            font-size: 13px;
+            padding-top: 5px;
+            background: url(../img/rezerwuj.png) right no-repeat;
+            a {
+              color: @apartamentReserv;
+              padding-left: 30px;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .rightDetails {
+        width: 271px;
+        margin-left: -9px;
+        img {
+          width: 100%;
+          height: 264px;
+        }
+        a {
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: none;
+        }
+        .info {
+          background: @apartamentInfoBackGround;
+          width: 100%;
+          height: 51px;
+          display: inline-block;
+          float: left;
+          font-size: 12px;
+          margin: 0 auto;
+          .localization {
+            color: white;
+            margin-top: 13px;
+            margin-left: 6px;
+            padding-left: 13px;
+            display: inline-block;
+            width: 30% !important;
+            background: url(../img/place.png) no-repeat left;
+          }
+          .describ {
+            color: white;
+            margin-top: 13px;
+            padding-left: 19px;
+            display: inline-block;
+            width: 12% !important;
+            background: url(../img/description.png) no-repeat left;
+          }
+          .availability {
+            color: white;
+            margin-top: 13px;
+            padding-left: 20px;
+            margin-left: 10px;
+            display: inline-block;
+            width: 20% !important;
+            background: url(../img/availability.png) no-repeat left;
+          }
+        }
+      }
+    }
+  }
+}

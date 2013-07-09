@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-02 10:24+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2)\n"
+
+#: .\cms_plugins.py:17
+msgid "reservation form"
+msgstr "formularz rezerwacji"
+
+#: .\cms_plugins.py:41
+msgid "price calendar"
+msgstr "Kalendarz z cenami"
+
+#: .\forms.py:9
+msgid "Card expiry date *"
+msgstr "Data ważności karty *"
+
+#: .\forms.py:10
+msgid "Card number *"
+msgstr "Numer karty kredytowej *"
+
+#: .\forms.py:11
+msgid "Card holder name *"
+msgstr "Nazwisko posiadacza karty"
+
+#: .\forms.py:12
+msgid "CVV or CVC *"
+msgstr "kod CVV lub CVC"
+
+#: .\forms.py:16
+msgid "Please enter a valid email address."
+msgstr "Proszę podać poprawny adres email"
+
+#: .\models.py:16
+msgid "Contact person"
+msgstr "Osoba kontaktowa"
+
+#: .\models.py:17
+msgid "Booking from *"
+msgstr "Rezerwacja od *"
+
+#: .\models.py:18
+msgid "Booking to *"
+msgstr "Rezerwacja do*"
+
+#: .\models.py:19
+msgid "E-mail"
+msgstr "E-mail"
+
+#: .\models.py:21
+msgid "Phone"
+msgstr "Telefon"
+
+#: .\models.py:23
+msgid "Card holder name"
+msgstr "Nazwisko posiadacza karty"
+
+#: .\models.py:24
+msgid "Date"
+msgstr "Ważność karty kredytowej"
+
+#: .\models.py:25
+msgid "Card number"
+msgstr "Numer karty kredytowej"
+
+#: .\models.py:26
+msgid "CVV2/CVC2"
+msgstr "CVV2/CVC2"
+
+#: .\models.py:27
+msgid "I agree to the processing of personal data"
+msgstr "Wyrażam zgodę na przetwarzanie danych osobowych"
+
+#: .\models.py:54
+msgid "Free"
+msgstr "Wolny"
+
+#: .\models.py:55
+msgid "Booking"
+msgstr "Rezerwacja"
+
+#: .\models.py:56
+msgid "Unavailable"
+msgstr "Niedostępny"
+
+#: .\templates\reservation\contact_plugin.html.py:13
+msgid "Book your apartment"
+msgstr "Zarezerwuj apartament"
+
+#: .\templates\reservation\contact_plugin.html.py:21
+msgid "Send"
+msgstr "Wyślij"
+
+#: .\templates\reservation\contact_plugin.html.py:26
+msgid "Thank you message has been sent"
+msgstr "Dziękujemy wiadomość została wysłana"
+
+#: .\templates\reservation\contact_plugin.html.py:31
+msgid ""
+"If you selected date the apartment is already booked, it will be suggested "
+"to you another closest to date."
+msgstr ""
+"Jeśli w wybranym przez Ciebie terminie apartament będzie już zarezerwowany "
+"zostanie Ci zaproponowany inny najbliższy termin."
+
+#~ msgid "Wyrażam zgodę na przetwarzanie danych osobowych"
+#~ msgstr "I agree to the processing of personal data"

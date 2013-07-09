@@ -1,0 +1,68 @@
+@import "variables.less";
+@import "mixins.less";
+
+.main-content {
+  background: url('../img/bgPlain.jpg') center;
+  background-position: top;
+  background-repeat: repeat-y;
+  min-height: 1336px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 20px;
+  margin-bottom: 30px !important;
+  .box-shadow-color(inset 0px, -10px, 10px, -10px, @rezerwacjaBoxShadowColor);
+  .partners {
+    display: block;
+    background: white;
+    padding: 10px;
+    .box-shadow( 2px 1px 20px 0px @rezerwacjaBoxShadowColor);
+    h2 {
+      font-family: novecento_wide_bookbold !important;
+      font-size: 18px;
+      color: #cb8916;
+      padding: 10px;
+      border-bottom: 1px solid #dfdacf;
+    }
+    h3 {
+      font-family: novecento_widenormal !important;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #cb8916;
+      padding: 10px;
+      border-bottom: 1px solid #dfdacf;
+    }
+    h4 {
+      font-family: novecento_widenormal !important;
+      font-size: 13.5px;
+      color: #cb8916;
+      padding: 10px;
+      border-bottom: 1px solid #dfdacf;
+    }
+    h5 {
+      font-family: novecento_widenormal !important;
+      font-size: 11px;
+      color: @BannerMainTitleColor;
+      padding-left: 10px;
+    }
+    pre {
+      margin-right: 35px;
+      margin-left: 36px;
+      padding: 5px 15px;
+       white-space: pre-wrap;       /* css-3 */
+       white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+       white-space: -pre-wrap;      /* Opera 4-6 */
+       white-space: -o-pre-wrap;    /* Opera 7 */
+       word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    }
+    .plugin_picture {
+      display: block;
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      img {
+        .box-shadow-color(2px, 2px, 19px, 0px,@rezerwacjaBoxShadowColor);
+      }
+    }
+  }
+}
+

@@ -1,0 +1,49 @@
+@import "variables.less";
+@import "mixins.less";
+
+.main-content {
+  background: url('../img/bgPlain.jpg') center;
+  background-position: top;
+  background-repeat: repeat-y;
+  max-width: 1600px;
+  min-height: 530px !important;
+  margin: 0 auto;
+  padding-top: 20px;
+  margin-bottom: 30px !important;
+  .box-shadow-color(inset 0px, -10px, 10px, -10px, @rezerwacjaBoxShadowColor);
+  .map {
+    width: 70.35897435897436%;
+    display: block;
+    background: white;
+    padding: 10px;
+    .box-shadow( 2px 1px 20px 0px @rezerwacjaBoxShadowColor);
+    h2 {
+      font-family: novecento_wide_bookbold;
+      font-size: 24px;
+      color: @BannerMainTitleColor;
+      border-bottom: 1px solid @BannerBorderBottom;
+      background: white;
+      padding: 10px;
+    }
+  }
+  .form {
+    width: 25.076923076923077%;
+    margin-right: 10px;
+    display: block;
+    background: white;
+    padding: 10px;
+    .box-shadow( 2px 1px 20px 0px @rezerwacjaBoxShadowColor);
+    input[type="submit"] {
+      cursor: pointer;
+      border: none;
+      display: block;
+      background: url(http://127.0.0.1:8000/static/less/../img/more.png) no-repeat;
+      font-family: novecento_wide_bookbold;
+      font-size: 13px;
+      color: #845606;
+      width: 118px;
+      height: 35px;
+    }
+  }
+}
+

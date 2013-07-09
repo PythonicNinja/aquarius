@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% load compress cms_tags menu_tags sekizai_tags %}
+
+{% block less %}
+    <link href='http://fonts.googleapis.com/css?family=Playball&subset=latin-ext,latin'
+          rel='stylesheet' type='text/css'>
+    {% if debug %}
+        <link rel="stylesheet/less" type="text/css" media="all"
+              href="{{ STATIC_URL }}less/main.less">
+        <link rel="stylesheet/less" type="text/css" media="all"
+              href="{{ STATIC_URL }}less/main_responsive.less">
+    {% else %}
+        {% compress css %}
+            <link rel="stylesheet/less" type="text/css" media="all"
+                  href="{{ STATIC_URL }}less/main.less">
+            <link rel="stylesheet/less" type="text/css" media="all"
+                  href="{{ STATIC_URL }}less/main_responsive.less">
+        {% endcompress %}
+    {% endif %}
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block contact_section %}
+    <div class="border-bottom-100">
+        <section class="contact-section small-container">
+            <div class="cena">
+                {% placeholder cena %}
+                od 150 zł / doba
+            </div>
+            <div class="telefon">
+                <img src="{{ STATIC_URL }}img/mobile.jpg">
+                {% placeholder telefon %}
+                +48 512 194 453
+            </div>
+            <div class="mail">
+                <img src="{{ STATIC_URL }}img/mail.jpg">
+                {% placeholder mail %}
+                RECEPCJA@APARTAMENTY.PL
+            </div>
+            <div class="adres">
+                <img src="{{ STATIC_URL }}img/place.jpg">
+                {% placeholder adres %}
+                UL. SOPOCKA 10/1, SOPOT
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block baners %}
+    <div class="container">
+        <div class="baners row-fluid text-center">
+            <div class="leftBaner">
+                <div class="row-fluid topTitle">Sopot Noclegi</div>
+                <div class="row-fluid mainTitle">Sopot</div>
+                <div class="row-fluid content">Apartamenty w Sopocie nad morzem
+                    na wynajem. Apartamenty Sopot.
+                </div>
+                <div class="photo"><img src="{{ STATIC_URL }}img/promoPic1.jpg">
+                </div>
+            </div>
+            <div class="leftBaner">
+                <div class="row-fluid topTitle">Oferta Specjalna</div>
+                <div class="row-fluid mainTitle">Fitness & SPA</div>
+                <div class="row-fluid content">Apartamenty w Sopocie nad morzem
+                    na wynajem. Apartamenty Sopot.
+                </div>
+                <div class="photo"><img src="{{ STATIC_URL }}img/promoPic3.jpg">
+                </div>
+            </div>
+            <div class="leftBaner">
+                <div class="row-fluid topTitle">Usługi dodatkowe</div>
+                <div class="row-fluid mainTitle">Transfer</div>
+                <div class="row-fluid content">Apartamenty w Sopocie nad morzem
+                    na wynajem. Apartamenty Sopot.
+                </div>
+                <div class="photo"><img src="{{ STATIC_URL }}img/promoPic2.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block base_content %}
+    <div class="smalest-container">
+        <div class="aktualnosci text-center">AKTUALNOŚCI</div>
+        <div class="news">
+            <div class="row-fluid">
+                <div class="span8 left-text-news">
+                    <div class="mainTitle">
+                        SOPOT NOCLEGI
+                    </div>
+                    <div class="content-text-news">
+                        Letnie szaleństwo? Rodzinne wakacje nad morzem? A może
+                        kilkudniowy wypad ze
+                        znajomymi?<br>
+                        Tylko w apartamentach Marina Apartments w Sopocie!
+                    </div>
+
+                    <a href="">
+                        <div class="more">
+                            Więcej
+                        </div>
+                    </a>
+                </div>
+                <div class="span4 picture">
+                    <img src="{{ STATIC_URL }}img/apartamentPhoto.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="news">
+            <div class="row-fluid">
+                <div class="span8 left-text-news">
+                    <div class="mainTitle">
+                        SOPOT NOCLEGI
+                    </div>
+                    <div class="content-text-news">
+                        Letnie szaleństwo? Rodzinne wakacje nad morzem? A może
+                        kilkudniowy wypad ze
+                        znajomymi?<br>
+                        Tylko w apartamentach Marina Apartments w Sopocie!
+                    </div>
+
+                    <a href="">
+                        <div class="more">
+                            Więcej
+                        </div>
+                    </a>
+                </div>
+                <div class="span4 picture">
+                    <img src="{{ STATIC_URL }}img/apartamentPhoto.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="news">
+            <div class="row-fluid">
+                <div class="span8 left-text-news">
+                    <div class="mainTitle">
+                        SOPOT NOCLEGI
+                    </div>
+                    <div class="content-text-news">
+                        Letnie szaleństwo? Rodzinne wakacje nad morzem? A może
+                        kilkudniowy wypad ze
+                        znajomymi?<br>
+                        Tylko w apartamentach Marina Apartments w Sopocie!
+                    </div>
+
+                    <a href="">
+                        <div class="more">
+                            Więcej
+                        </div>
+                    </a>
+                </div>
+                <div class="span4 picture">
+                    <img src="{{ STATIC_URL }}img/apartamentPhoto.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="partnerzy">
+            <div class="text">
+                PARTNERZY
+            </div>
+            <div class="images">
+                <img src="{{ STATIC_URL }}img/referencje1.jpg" alt=""/>
+                <img src="{{ STATIC_URL }}img/referencje2.jpg" alt=""/>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block footer %}
+    <div class="small-container text-center">
+        <div class="row-fluid">
+            <div class="span12">
+                <nav>
+                    <ul class="menu unstyled">
+                        {% show_menu 0 100 100 100 %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="qrcode pull-right">
+            <img src="{{ STATIC_URL }}img/qrCode.jpg" alt=""/>
+        </div>
+        <div class="row-fluid">
+            <div class="span12 text-center logo">
+                <a href="/"><img src="{{ STATIC_URL }}img/logo.jpg"></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

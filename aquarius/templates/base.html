@@ -1,0 +1,147 @@
+{% load compress cms_tags menu_tags sekizai_tags %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="{% block meta-description %}{% endblock %}">
+    <meta name="author" content="{% block meta-author %}{% endblock %}">
+    <meta name="keywords" content="{% block meta-keywords %}{% endblock %}">
+    {% block extra-meta %}{% endblock %}
+
+    {% render_block "css" %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}plugins/fonts/stylesheet.css">
+    <link rel="stylesheet"
+          href="{{ STATIC_URL }}plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="{{ STATIC_URL }}plugins/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet"
+          href="{{ STATIC_URL }}plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="{{ STATIC_URL }}plugins/font-awesome/css/font-awesome.min.css">
+    {% block "css" %}{% endblock %}
+
+    {% block less %}
+    {% endblock %}
+
+    {% if debug %}
+        <link rel="stylesheet/less" type="text/css" media="all"
+              href="{{ STATIC_URL }}less/base.less">
+        <script src="{{ STATIC_URL }}js/libs/less-1.3.0.min.js"></script>
+    {% else %}
+        {% compress css %}
+            <link rel="stylesheet/less" type="text/css" media="all"
+                  href="{{ STATIC_URL }}less/base.less">
+        {% endcompress %}
+    {% endif %}
+
+
+
+    {% block extra-css %}{% endblock %}
+    <script src="{{ STATIC_URL }}js/libs/modernizr-2.5.3.js"></script>
+    <!--[if lt IE 9]>
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    <!--[if IE 7]>
+		  <link rel="stylesheet" href="{{ STATIC_URL }}plugins/font-awesome/css/font-awesome-ie7.min.css">
+		<![endif]-->
+</head>
+<body class="{% block body_class %}page-main{% endblock %}">
+{% cms_toolbar %}
+<!--[if lt IE 9]>
+<div class="container">
+  <div class="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <p>Używasz <strong>przestarzałej</strong> przeglądarki. <a href="http://browsehappy.com/">Zaktualizuj ją</a>, aby w wpełni skorzystać z możliwości tej strony.</p>
+      </div>
+    </div>
+  <![endif]-->
+<header class="container">
+    <div class="container-header">
+        <div class="row-fluid">
+            <ul class="languages pull-right">
+                <li class="language">PL</li>
+                <li class="language">EN</li>
+                <li class="language">DE</li>
+                <li class="language">RUS</li>
+            </ul>
+            <div class="span12 text-center">
+                <a href="/"><img src="{{ STATIC_URL }}img/logo.jpg"></a>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <nav>
+                    <ul class="menu unstyled">
+                        {% block menu %}
+                            {% show_menu 0 100 100 100 %}
+                        {% endblock %}
+                    </ul>
+                </nav>
+            </div>
+            <div class="span1 tw">
+                <a href="#twitter"><img src="{{ STATIC_URL }}img/tw.jpg"></a>
+            </div>
+        </div>
+    </div>
+    {% block header %}{% endblock %}
+</header>
+
+<section class="slider container">
+    {% placeholder slider %}
+</section>
+
+
+{% block contact_section %}{% endblock %}
+
+
+<section class="main-content">
+    {% placeholder main_content %}
+    <div class="container">
+        <div class="baners row-fluid text-center">
+            {% placeholder promotion %}
+        </div>
+    </div>
+    {% block base_content %}{% endblock %}
+</section>
+
+<footer class="container">
+    {% if footer %}
+        {% block footer %}{% endblock %}
+    {% else %}
+        <div class="small-container text-center">
+            <div class="row-fluid">
+                <div class="span12">
+                    <nav>
+                        <ul class="menu unstyled">
+                            {% show_menu 0 100 100 100 %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="qrcode pull-right">
+                <img src="{{ STATIC_URL }}img/qrCode.jpg" alt=""/>
+            </div>
+            <div class="row-fluid">
+                <div class="span12 text-center logo">
+                    <a href="/"><img src="{{ STATIC_URL }}img/logo.jpg"></a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="{{ STATIC_URL }}js/jquery.min.js"></script>
+')</script>
+{% render_block "js" %}
+{% block extra-js %}{% endblock %}
+{% compress js %}
+    <script src = "{{ STATIC_URL }}plugins/bootstrap/js/bootstrap.min.js" >
+    </script>
+    <script src="{{ STATIC_URL }}js/site.js"></script>
+{% endcompress %}
+</body>
+</html>
